@@ -1,0 +1,43 @@
+server:
+  port: 8081
+
+name: java
+
+eureka:
+  instance:
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+
+security:
+  user:
+    name: user
+    password: password
+
+swagger:
+  scan:
+    basePackage: com.ftx.solution.service.cms.controller
+  apiInfo:
+    title: 标题
+    contact: 创建人
+    version: 版本号
+    description: API 描述
+
+spring:
+  datasource:
+    #指定JDBC URL.
+    url: jdbc:mysql://localhost:3306/primus?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    #指定数据源用户名
+    username: admin
+    #指定数据源密码
+    password: 123456
+  jpa:
+    database: MYSQL
+    hibernate:
+      #指定DDL mode (none, validate, update, create, create-drop)
+      ddl-auto: none
+    #是否开启sql的log，默认为: false
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
