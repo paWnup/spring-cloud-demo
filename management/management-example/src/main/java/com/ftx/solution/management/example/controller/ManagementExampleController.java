@@ -9,7 +9,6 @@ import com.ftx.solution.management.example.service.ExampleService;
 import com.ftx.solution.model.example.vo.ExampleVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -22,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
@@ -34,16 +34,16 @@ public class ManagementExampleController extends BaseController {
     @Value("${name:unknown}")
     private String name;
 
-    @Autowired
+    @Resource
     EurekaDiscoveryClient discoveryClient;
 
-    @Autowired
+    @Resource
     private ExampleService serviceClient;
 
-    @Autowired
+    @Resource
     private RedisUtil redisUtil;
 
-    @Autowired
+    @Resource
     private MessageProducer messageProducer;
 
     @GetMapping(value = "/print")
