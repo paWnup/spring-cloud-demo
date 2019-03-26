@@ -1,9 +1,13 @@
 package com.ftx.solution.management.example.entity;
 
+import com.ftx.solution.common.base.entity.BaseEntity;
 import lombok.Data;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.Table;
 
 /**
  * @author puan
@@ -12,11 +16,8 @@ import java.util.Date;
 @Entity
 @Table(name = "user")
 @Data
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@EntityListeners(AuditingEntityListener.class)
+public class User extends BaseEntity {
 
     @Column(length = 50, nullable = false)
     private String username;
@@ -26,10 +27,4 @@ public class User {
 
     @Column(length = 50, nullable = false)
     private String password;
-
-    @Column(name = "create_time")
-    private Date createTime;
-
-    @Column(name = "update_time")
-    private Date updateTime;
 }

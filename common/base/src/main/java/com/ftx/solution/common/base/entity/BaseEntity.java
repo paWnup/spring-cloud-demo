@@ -1,6 +1,8 @@
 package com.ftx.solution.common.base.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,12 +21,11 @@ public abstract class BaseEntity implements Serializable {
     private Long id;
 
     @Column(name = "create_time")
+    @CreatedDate
     private Date createTime;
 
     @Column(name = "update_time")
+    @LastModifiedDate
     private Date updateTime;
-
-    @Column(name = "is_delete")
-    private boolean isDelete;
 
 }

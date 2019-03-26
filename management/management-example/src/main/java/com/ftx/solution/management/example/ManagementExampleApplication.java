@@ -7,6 +7,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 
@@ -15,6 +16,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @SpringBootApplication
 @EnableCircuitBreaker
 @EnableOAuth2Client
+@EnableJpaAuditing
 public class ManagementExampleApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
