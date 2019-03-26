@@ -49,7 +49,7 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID extends Serializable> e
     @Transactional(rollbackFor = Throwable.class)
     public T logicDelete(ID id) {
         T entity = findOne(id);
-        entity.setDelete(true);
+        //entity.setDelete(true);
         return save(entity);
     }
 }
