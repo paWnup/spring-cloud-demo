@@ -1,14 +1,10 @@
-package util;
-
-import org.junit.Test;
+package com.ftx.solution.kata;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * 判断字符串是否有重复字母
@@ -18,25 +14,15 @@ import static org.junit.Assert.assertEquals;
  **/
 public class Isogram {
 
-    public static Pattern pattern = Pattern.compile("(?i)\\b\\w*(\\w)\\w*(?=\\1)\\w*\\b");
+    public static Pattern pattern = Pattern.compile("(?i)\\w*(\\w)\\w*(?:\\1)\\w*");
 
-    @Test
-    public void FixedTests() {
-        assertEquals(true, Isogram.isIsogram("Dermatoglyphics"));
-        assertEquals(true, Isogram.isIsogram("isogram"));
-        assertEquals(false, Isogram.isIsogram("moose"));
-        assertEquals(false, Isogram.isIsogram("isIsogram"));
-        assertEquals(false, Isogram.isIsogram("aba"));
-        assertEquals(false, Isogram.isIsogram("moOse"));
-        assertEquals(true, Isogram.isIsogram("thumbscrewjapingly"));
-        assertEquals(true, Isogram.isIsogram(""));
-    }
-
-    public static boolean isIsogram(String str) {
-//        return isIsogram11(str);
-//        return isIsogram2(str);
-//        return isIsogram3(str);
-        return isIsogram4(str);
+    public static void main(String[] args) {
+        String str = "asqeghusH";
+        System.out.println(isIsogram1(str));
+        System.out.println(isIsogram11(str));
+        System.out.println(isIsogram2(str));
+        System.out.println(isIsogram3(str));
+        System.out.println(isIsogram4(str));
     }
 
     public static boolean isIsogram1(String str) {
@@ -59,7 +45,7 @@ public class Isogram {
         if (str == null) {
             return false;
         } else {
-            char[] chars = str.toLowerCase().toCharArray();
+            char[] chars = str.toCharArray();
             for (char x : chars) {
                 if (list.contains(x)) {
                     return false;
@@ -73,12 +59,11 @@ public class Isogram {
 
     public static boolean isIsogram2(String str) {
         // ...
-        return str.length() == str.toLowerCase().chars().distinct().count();
+        return str.length() == str.chars().distinct().count();
     }
 
     public static boolean isIsogram3(String str) {
         // ...
-        str = str.toLowerCase();
         for (int i = 0; i < str.length(); i++) {
             if (str.indexOf(str.charAt(i)) != str.lastIndexOf(str.charAt(i))) {
                 return false;

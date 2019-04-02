@@ -1,4 +1,4 @@
-package com.ftx.solution.util;
+package com.ftx.solution.kata;
 
 import org.dom4j.Attribute;
 import org.dom4j.Document;

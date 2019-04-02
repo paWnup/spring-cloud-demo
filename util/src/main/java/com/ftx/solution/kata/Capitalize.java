@@ -1,4 +1,4 @@
-package com.ftx.solution.util;
+package com.ftx.solution.kata;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

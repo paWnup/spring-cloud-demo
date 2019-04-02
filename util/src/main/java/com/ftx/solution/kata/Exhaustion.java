@@ -1,4 +1,4 @@
-package com.ftx.solution.util;
+package com.ftx.solution.kata;
 
 import lombok.Data;
 import org.apache.poi.ss.usermodel.Row;

@@ -1,6 +1,6 @@
-package util;
+package solution;
 
-import com.ftx.solution.util.DRoot;
+import com.ftx.solution.kata.DRoot;
 import org.junit.Assert;
 import org.junit.Test;
 

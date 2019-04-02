@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 导出数据库表结构文档
  * @author puan
  * @date 2019-03-9:
  **/
