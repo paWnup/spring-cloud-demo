@@ -14,7 +14,7 @@ import java.util.Map;
  * @date 2019-03-9:
  **/
 @Log4j
-public class MyFrame {
+public class DBTableUtil {
 
     public static void main(String[] args) {
         String url = "jdbc:mysql://47.95.118.118:3306/demo";
