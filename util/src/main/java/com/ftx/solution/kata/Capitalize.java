@@ -10,12 +10,6 @@ import java.util.stream.Collectors;
  **/
 public class Capitalize {
 
-    public static void main(String[] args) {
-        String str = "most trees are blue";
-        System.out.println(toJadenCase1(str));
-        System.out.println(toJadenCase2(str));
-    }
-
     private static String toJadenCase1(String str) {
         char[] chars = str.toCharArray();
         for (int i = 0; i < chars.length; i++) {
