@@ -28,7 +28,7 @@ public class UserService {
      * @return 用户ID
      */
     @Transactional(rollbackFor = Exception.class)
-    public Long create(CreateUserVo userVo) {
+    public long create(CreateUserVo userVo) {
         User user = new User();
         BeanUtils.copyProperties(userVo, user);
         userRepository.save(user);

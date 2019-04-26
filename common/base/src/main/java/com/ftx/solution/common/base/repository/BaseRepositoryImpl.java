@@ -38,7 +38,7 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID extends Serializable> e
     @Transactional(rollbackFor = Throwable.class)
     public <S extends T> S save(S entity) {
         //TODO 只适用于主键自增，如果手动设置主键，那么createTime将不会设置。
-        if (entity.getId() == null || entity.getId() == 0) {
+        if (entity.getId() == 0) {
             entity.setCreateTime(new Date());
         }
         entity.setUpdateTime(new Date());

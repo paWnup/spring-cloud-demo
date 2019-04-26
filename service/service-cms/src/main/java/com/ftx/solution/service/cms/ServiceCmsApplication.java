@@ -11,7 +11,6 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableFeignClients
 @SpringBootApplication
 @EnableCircuitBreaker
-
 public class ServiceCmsApplication {
 
     public static void main(String[] args) {

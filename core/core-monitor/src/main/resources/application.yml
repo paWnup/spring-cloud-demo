@@ -23,6 +23,8 @@ eureka:
 spring:
   rabbitmq:
     host: rabbitmq
+    username: admin
+    password: admin
   boot:
     admin:
       routes:

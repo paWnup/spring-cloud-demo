@@ -26,16 +26,16 @@ swagger:
 spring:
   datasource:
     #指定JDBC URL.
-    url: jdbc:mysql://localhost:3306/primus?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://47.95.118.118:3306/test?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2b8&allowMultiQueries=true
     #指定数据源用户名
-    username: admin
+    username: root
     #指定数据源密码
     password: 123456
   jpa:
     database: MYSQL
     hibernate:
       #指定DDL mode (none, validate, update, create, create-drop)
-      ddl-auto: none
+      ddl-auto: update
     #是否开启sql的log，默认为: false
     show-sql: true
     properties:

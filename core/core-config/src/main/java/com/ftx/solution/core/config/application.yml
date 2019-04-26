@@ -22,8 +22,8 @@ spring:
   rabbitmq:
     host: rabbitmq
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: admin
     virtual-host: /
 #未确认重试时间间隔（分钟）
     interval: 1

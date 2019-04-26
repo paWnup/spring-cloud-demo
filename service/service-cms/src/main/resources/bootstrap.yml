@@ -12,7 +12,3 @@ spring:
         max-interval: 10000
         multiplier: 2
         max-attempts: 10
-  thymeleaf:
-    cache: false
-#解决thymeleaf标签不闭合报错问题
-    mode: LEGACYHTML5

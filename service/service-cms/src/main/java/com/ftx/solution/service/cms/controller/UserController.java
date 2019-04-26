@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -30,12 +31,8 @@ public class UserController {
     @PostMapping("/")
     @ResponseBody
     @ApiOperation(value = "创建用户")
-    public ResultMap createUser(@Valid CreateUserVo user, BindingResult result) {
-        if (result.hasErrors()) {
-            List<ObjectError> list = result.getAllErrors();
-            return ResultMap.getFailedResultMap(list.get(0).getDefaultMessage());
-        }
-        return ResultMap.getSuccessResultMap(userService.create(user));
+    public long createUser(@Validated CreateUserVo user) {
+        return userService.create(user);
     }
 
     @GetMapping("/{id}")

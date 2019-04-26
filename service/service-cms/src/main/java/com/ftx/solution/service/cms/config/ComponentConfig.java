@@ -2,6 +2,7 @@ package com.ftx.solution.service.cms.config;
 
 import com.ftx.solution.common.base.config.Swagger2Config;
 import com.ftx.solution.common.base.config.ValidationConfig;
+import com.ftx.solution.common.base.controller.ControllerAdvice;
 import com.ftx.solution.common.base.handler.GlobalExceptionHandler;
 import com.ftx.solution.common.base.repository.BaseRepositoryFactoryBean;
 import com.ftx.solution.common.base.util.SpringContextUtils;
@@ -24,7 +25,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Import({Swagger2Config.class,
         ValidationConfig.class,
         GlobalExceptionHandler.class,
-        SpringContextUtils.class})
+        SpringContextUtils.class,
+        ControllerAdvice.class})
 @EnableJpaRepositories(
         repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class,
         basePackages = "com.ftx.solution.service.cms.dao")

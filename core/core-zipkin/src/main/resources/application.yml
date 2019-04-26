@@ -3,6 +3,8 @@ spring:
     name: zipkin
   rabbitmq:
     host: rabbitmq
+    username: admin
+    password: admin
 
 server:
   port: 9411
